@@ -3,7 +3,6 @@ package com.example.phonestore2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.phonestore2.auth.LoginActivity
 import com.example.phonestore2.auth.RegisterActivity
 import java.util.*
 

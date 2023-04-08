@@ -23,8 +23,11 @@ class LoginActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         binding.loginButton.setOnClickListener {
+
             val email = binding.loginEmail.text.toString()
             val password = binding.loginPassword.text.toString()
+
+
             if (email.isNotEmpty() && password.isNotEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                     if (it.isSuccessful){
@@ -43,20 +46,5 @@ class LoginActivity : AppCompatActivity() {
             val signupIntent = Intent(this, RegisterActivity::class.java)
             startActivity(signupIntent)
         }
-    }
-    //Outside onCreate
-    private fun compareEmail(email: EditText){
-        if (email.text.toString().isEmpty()){
-            return
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()){
-            return
-        }
-        firebaseAuth.sendPasswordResetEmail(email.text.toString())
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Check your email", Toast.LENGTH_SHORT).show()
-                }
-            }
     }
 }

@@ -8,8 +8,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFC801</color>
-    <color name="blue">#046FC1</color>
+    <color name="blue2">#046FC1</color>
 
     <color name="lavender">#8692f7</color>
     <color name="grey">#ff424242</color>
+
+    <color name="blueColor">#010035</color>
+    <color name="orangeColor">#FF6E4E</color>
+    <color name="newWhite">#FFFFFF</color>
+    <color name="textColor">#010035</color>
+
+    <color name="purple">#010035</color>
+    <color name="orange">#FF6E4E</color>
+    <color name="blue">#0489BD</color>
 </resources>

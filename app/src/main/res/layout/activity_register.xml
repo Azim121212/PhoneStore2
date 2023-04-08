@@ -23,6 +23,7 @@
             <EditText
                 android:layout_width="350dp"
                 android:layout_height="60dp"
+                android:background="@drawable/cornenrs"
                 android:id="@+id/signup_email"
                 android:layout_marginTop="30dp"
                 android:padding="8dp"
@@ -37,6 +38,7 @@
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Password"
+                android:background="@drawable/cornenrs"
                 android:inputType="textPassword"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
@@ -47,6 +49,7 @@
                 android:id="@+id/signup_confirm"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
+                android:background="@drawable/cornenrs"
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:drawablePadding="8dp"
@@ -55,10 +58,12 @@
             <Button
                 android:layout_width="350dp"
                 android:layout_height="70dp"
+                android:background="@drawable/cornenrs"
                 android:layout_marginTop="30dp"
                 android:text="Sign Up"
                 android:id="@+id/signup_button"
                 android:textSize="18sp"
+
                 app:cornerRadius = "30dp"/>
 
             <TextView

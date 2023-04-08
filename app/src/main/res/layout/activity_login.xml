@@ -41,6 +41,7 @@
                     android:id="@+id/login_password"
                     android:layout_marginTop="20dp"
                     android:padding="8dp"
+                    android:background="@drawable/cornenrs"
                     android:hint="Password"
                     android:drawablePadding="8dp"
                     android:textColor="@color/grey"/>
