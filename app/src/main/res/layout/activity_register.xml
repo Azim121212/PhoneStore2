@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="320dp"
-            android:padding="20dp">
+            android:padding="20dp"
+            tools:ignore="UselessParent">
 
             <EditText
                 android:layout_width="350dp"
@@ -27,9 +28,10 @@
                 android:id="@+id/signup_email"
                 android:layout_marginTop="30dp"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:drawablePadding="8dp"
-                android:textColor="@color/grey"/>
+                android:textColor="@color/grey"
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:layout_width="350dp"
@@ -37,7 +39,7 @@
                 android:id="@+id/signup_password"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:background="@drawable/cornenrs"
                 android:inputType="textPassword"
                 android:drawablePadding="8dp"
@@ -50,7 +52,7 @@
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:background="@drawable/cornenrs"
-                android:hint="Confirm Password"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
@@ -60,7 +62,7 @@
                 android:layout_height="70dp"
                 android:background="@drawable/cornenrs"
                 android:layout_marginTop="30dp"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:id="@+id/signup_button"
                 android:textSize="18sp"
 
@@ -72,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="8dp"
-                android:text="Already an user? Login"
+                android:text="@string/already_an_user_login"
                 android:textSize="18sp" />
 
         </LinearLayout>
