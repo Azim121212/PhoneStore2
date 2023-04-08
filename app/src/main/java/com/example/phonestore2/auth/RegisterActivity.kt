@@ -4,12 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.phonestore2.R
-import com.example.phonestore2.SwitchActivity
 import com.example.phonestore2.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterActivity : AppCompatActivity() {
+class   RegisterActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityRegisterBinding
@@ -21,41 +19,37 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.textView.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, SwitchActivity ::class.java)
-            startActivity(intent)
-        }
 
-        binding.button.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val pass = binding.passET.text.toString()
+        binding.signupButton.setOnClickListener{
+            val email = binding.signupEmail.text.toString()
+            val password = binding.signupPassword.text.toString()
+            val confirmPassword = binding.signupConfirm.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
-
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, SwitchActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
+            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()){
+                if (password == confirmPassword){
+                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                        if (it.isSuccessful){
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        }
                     }
+                } else {
+                    Toast.makeText(this, "Password does not matched", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
-    }
 
-    override fun onStart() {
-        super.onStart()
 
-        if(firebaseAuth.currentUser != null){
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        binding.loginRedirectText.setOnClickListener {
+            val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
         }
     }
 }
