@@ -18,10 +18,10 @@ class   RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.signupButton.setOnClickListener{
-            val email = binding.signupEmail.text.toString()
-            val password = binding.signupPassword.text.toString()
-            val confirmPassword = binding.signupConfirm.text.toString()
+        binding.button.setOnClickListener{
+            val email = binding.emailEt.text.toString()
+            val password = binding.passET.text.toString()
+            val confirmPassword = binding.confirmPassEt.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()){
                 if (password == confirmPassword){
@@ -41,7 +41,7 @@ class   RegisterActivity : AppCompatActivity() {
             }
         }
 
-        binding.loginRedirectText.setOnClickListener {
+        binding.textView.setOnClickListener {
             val loginIntent = Intent(this, LoginActivity::class.java)
             startActivity(loginIntent)
         }

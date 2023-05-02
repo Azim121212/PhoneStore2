@@ -7,7 +7,7 @@ import com.example.phonestore2.auth.RegisterActivity
 import java.util.*
 
 class SwitchActivity : AppCompatActivity() {
-    var timer: Timer? = null
+    private var timer: Timer? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

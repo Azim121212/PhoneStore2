@@ -19,10 +19,10 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-        binding.loginButton.setOnClickListener {
+        binding.buttonLog.setOnClickListener {
 
-            val email = binding.loginEmail.text.toString()
-            val password = binding.loginPassword.text.toString()
+            val email = binding.emailEt.text.toString()
+            val password = binding.passET.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -37,11 +37,11 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
-        binding.signupRedirectText.setOnClickListener {
+        binding.textView.setOnClickListener {
             val signupIntent = Intent(this, RegisterActivity::class.java)
             startActivity(signupIntent)
         }
-            binding.loginButton.setOnClickListener {
+            binding.buttonLog.setOnClickListener {
                 val intent = Intent(this@LoginActivity, ArgenActivity::class.java)
                 startActivity(intent)
             }

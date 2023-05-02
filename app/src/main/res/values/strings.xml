@@ -38,4 +38,14 @@
     <string name="already_an_user_login">Already an user? Login</string>
     <string name="price">price</string>
     <string name="infophone">infoPhone</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="ef">TODO</string>
+    <string name="not_registered_yet_sign_up">Not Registered Yet , Sign Up !</string>
+    <string name="sign_in">Sign In</string>
+    <string name="type_your_password">Type Your Password</string>
+    <string name="type_your_email">Type your Email</string>
 </resources>

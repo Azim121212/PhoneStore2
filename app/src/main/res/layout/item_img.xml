@@ -18,8 +18,8 @@
 
     <TextView
         android:id="@+id/tvPrice"
-        android:layout_width="50dp"
-        android:layout_height="20dp"
+        android:layout_width="74dp"
+        android:layout_height="23dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:text="@string/price"
@@ -33,6 +33,7 @@
         android:layout_width="122dp"
         android:layout_height="13dp"
         android:textSize="10sp"
+        android:minLines="1"
         android:text="@string/infophone"
         android:textColor="@color/textColor"
         app:layout_constraintStart_toStartOf="parent"
